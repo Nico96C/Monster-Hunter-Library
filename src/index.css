@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css?family=Protest+Riot");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Fira sans', sans-serif;
+}
+
+body{
+  background-color: #EEE;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 16px;
+  transition: 0.4s;
+}
+
+.search-box input {
+  display: block;
+  appearance: none;
+  outline: none;
+  border: none;
+
+  padding: 16px;
+  width: 100%;
+  transition: 0.4s;
+}
+
+.search-box:focus-within{
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.results{
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.result{
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #fff;
+  border-radius: 16px;
+  transition: 0.4s;
+}
+
+.result:hover {
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.result h3 {
+  color: #888;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.result p {
+  color: #313131;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.result p .searchmatch {
+  color: #A84FFF;
+  font-weight: 700;
+}
+
+.result a {
+  display: inline-block;
+  padding: 12px 16px;
+  background-color: #A84FFF;
+  color: #FFF;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: 0.4s;
+}
+
+.result a:hover{
+  background-color: #FF4FA8;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.submit {
+  margin: 10px;
+}
+
+.armor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.armor-piece {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.armor-piece img {
+  max-width: 100%;
+  height: auto;
+}
+
+.listado{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  display: flex;
+  color: #ffd700;
+  flex-direction: column;
+  align-items: center;
+  font-size: 42px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 5px;
+  font-family: "Protest Riot";
+}
+
+.encabezado {
+  background-color: #464442; /* Color de fondo oscuro */
+  border: 3px solid #fff; /* Borde blanco */
+  border-radius: 10px; /* Borde redondeado */
+  padding: 20px; /* Espaciado interno */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilos para los elementos de lista dentro del encabezado */
+.encabezado .listado {
+  list-style-type: none; /* Quita los marcadores de lista */
+  padding: 0;
+}
+
+.encabezado .listado .items {
+  display: inline-block; /* Muestra los elementos de lista en línea */
+  margin-right: 20px; /* Margen derecho entre elementos de lista */
+}
+
+.encabezado .listado .items:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+/* Estilos para los enlaces dentro del encabezado */
+.encabezado .listado .items a {
+  font-family: "Protest Riot";
+  color: #976328; /* Color del texto blanco */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  transition: color 0.5s; /* Transición de color suave */
+}
+
+.encabezado .listado .items a:hover {
+  color: #ffd700; /* Cambia el color del texto al pasar el mouse */
+}
+
+.cuerpo {
+  display: flex;
+  flex-direction: row;
+  background-color: #464442; /* Color de fondo oscuro */
+  border: 3px solid #fff; /* Borde blanco */
+  border-radius: 10px; /* Borde redondeado */
+  padding: 20px; /* Espaciado interno */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+.columna {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #ffd700;
+}
+
+.Centro {
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ffd700;
+}
+
+.carrusel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.carrusel-item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  margin-right: 10px;
+}
+
+.carrusel-item img {
+  max-width: 100%; 
+}
+
+.Armor {
+  background-color: #464442;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.WeaponData {
+  background-color: #464442; 
+  border: 2px solid #fff; 
+  border-radius: 10px; 
+  padding: 15px; 
+  margin-bottom: 20px; 
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filtro {
+  margin: 5px;
+}
