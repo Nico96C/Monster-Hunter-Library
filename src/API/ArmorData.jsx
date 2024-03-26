@@ -4,6 +4,7 @@ const ArmorData = () => {
   const [armorData, setArmorData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [activeArmorId, setActiveArmorId] = useState(null);
 
   useEffect(() => {
     const fetchArmorInfo = async (page = 1, pageSize = 50) => {
@@ -28,6 +29,10 @@ const ArmorData = () => {
     fetchArmorInfo();
   }, []); // Ejecuta fetchArmorInfo solo cuando el componente se monta por primera vez
 
+  const showImage = (armorId) => {
+    setActiveArmorId(armorId === activeArmorId ? null : armorId);
+  };
+
   return (
     <div className="Armor">
       <h1> ALL ARMORS SET </h1>
@@ -41,17 +46,35 @@ const ArmorData = () => {
               <h3>{armor.name}</h3>
               <p>Rank: {armor.rank}</p>
               <div className="carrusel">
-                {armor.pieces.map((piece) => (
-                  <div className="carrusel-item" key={piece.id}>
-                    <img
-                      src={piece.assets?.imageMale}
-                      alt={`Armor - ${piece.name}`}
-                      width={200}
-                      height={200}
-                    />
-                  </div>
-                ))}
+                {armor.pieces &&
+                  armor.pieces.map(
+                    (piece) =>
+                      piece && (
+                        <div
+                          key={piece.id}
+                          className={`carrusel-item ${
+                            armor.id === activeArmorId ? "active" : ""
+                          }`}
+                        >
+                          <h2></h2>
+                          <img
+                            src={piece.assets?.imageMale}
+                            alt={`Armor - ${piece.name}`}
+                            width={200}
+                            height={200}
+                          />
+                          <h2></h2>
+                          <img
+                            src={piece.assets?.imageFemale}
+                            alt={`Armor - ${piece.name}`}
+                            width={200}
+                            height={200}
+                          />
+                        </div>
+                      )
+                  )}
               </div>
+              <button onClick={() => showImage(armor.id)}> show </button>
             </div>
           ))}
       </div>

@@ -1,4 +1,4 @@
-import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
+import { Link, BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./API/Home.jsx"
 import ArmorData from "./API/ArmorData.jsx";
 import WeaponData from "./API/WeaponData.jsx"
@@ -22,6 +22,7 @@ function App() {
       </header>
 
       <Routes>
+        <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
         <Route path="/armordata" element={<ArmorData />} />
         <Route path="/weaponsdata" element={<WeaponData />} />
